@@ -1,0 +1,53 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #dcf0ff;
+}
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/*-------------------------- Homepage -------------------------- */
+
+#homePage {
+  text-align: center;
+  width: 50%;
+  margin: auto;
+  background: #ffffffbf;
+  border-radius: 10px;
+  padding: 10px;
+}
+#homePage h1 {
+  color: #453838;
+  text-align: left;
+  font-family: "Rowdies", sans-serif;
+  letter-spacing: 1px;
+  margin-left: 10px;
+}
+#homePage button {
+  border: 2px solid #5e5656;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: medium;
+  background: transparent;
+  color: #5e5656;
+  cursor: pointer;
+  font-variant-caps: small-caps;
+  font-family: "Lilita One", sans-serif;
+  letter-spacing: 0.5px;
+}
+#homePage button:hover {
+  background: #5e5656;
+  color: white;
+}
+
+@media screen and (max-width: 768px) {
+  #root {
+    min-height: 89vh;
+  }
+  #homePage {
+    width: 80%;
+  }
+}
