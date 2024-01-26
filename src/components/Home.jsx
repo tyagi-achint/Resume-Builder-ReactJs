@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 export default function Home() {
     return (
@@ -7,9 +8,11 @@ export default function Home() {
                 Swift Resume Creation:
                 <br />Effortless and Fast
             </h1>
-            <button>
+
+            <Link to='/newpage' className='createResume'>
                 Create
-            </button>
+            </Link>
+
 
         </div>
     )

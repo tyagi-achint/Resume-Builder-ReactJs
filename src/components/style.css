@@ -26,7 +26,11 @@ body {
   letter-spacing: 1px;
   margin-left: 10px;
 }
-#homePage button {
+#homePage .createResume {
+  display: inherit;
+  margin: auto;
+  width: fit-content;
+  text-decoration: none;
   border: 2px solid #5e5656;
   border-radius: 5px;
   padding: 10px 20px;
@@ -38,7 +42,7 @@ body {
   font-family: "Lilita One", sans-serif;
   letter-spacing: 0.5px;
 }
-#homePage button:hover {
+#homePage .createResume:hover {
   background: #5e5656;
   color: white;
 }
