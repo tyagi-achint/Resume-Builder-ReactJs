@@ -29,13 +29,23 @@ body {
   color: white;
 }
 
+/* Page Heading */
+
+h1.currentPage {
+  font-family: math;
+  letter-spacing: -2px;
+  margin-bottom: -10px;
+  margin-left: 12px;
+  font-variant-caps: small-caps;
+}
+
 /*-------------------------- Homepage -------------------------- */
 
 #homePage {
   text-align: center;
   width: 50%;
   margin: auto;
-  background: #ffffffbf;
+  background: #fffff7cf;
   border-radius: 10px;
   padding: 10px;
 }
@@ -54,21 +64,20 @@ body {
 
 /*-------------------------- PersonalInfo -------------------------- */
 #personalInfo {
+  width: 65%;
   margin: auto;
 }
 #personalInfo .backHome {
   position: fixed;
-  right: 4vw;
-  top: 2vh;
+  right: 2dvw;
+  top: 1dvh;
   padding: 7px 14px;
 }
 
 /* Form Div */
-
 .formDiv {
-  /* width: 60%; */
   margin: auto;
-  background: #ffffffbf;
+  background: #fffff7cf;
   border-radius: 10px;
   padding: 10px;
 }
@@ -76,35 +85,111 @@ body {
 form {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  max-width: 600px;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-}
-
-label {
-  display: block;
-  margin-bottom: 5px;
-}
-
-.input-group {
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
 }
 
 input {
-  width: 100%;
+  margin-top: 0;
+  width: 85%;
+  background-color: transparent;
   padding: 8px;
-  box-sizing: border-box;
+  color: #2d2d2d;
+  font-weight: bolder;
+  margin-bottom: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-@media screen and (max-width: 768px) {
+input:focus {
+  outline: none;
+  box-shadow: 0px 0px 20px 2px #757575;
+  border: none;
+}
+
+form div {
+  padding: 5%;
+  display: grid;
+  grid-template-columns: 12% 85%;
+}
+form label {
+  font-size: x-large;
+}
+form .btn {
+  width: fit-content;
+  grid-column: 2;
+  padding: 5px 15px;
+  border-color: #9ad4ff;
+  color: black !important;
+  background: #9ad4ff !important;
+}
+
+form .btn:hover {
+  color: #005ea5 !important;
+  background-color: transparent !important;
+  border-color: #005ea5 !important;
+}
+
+@media screen and (max-width: 900px) {
   #root {
     min-height: 89vh;
   }
   #homePage {
     width: 80%;
   }
+
+  form {
+    display: block;
+    text-align: center;
+  }
+  form div {
+    padding: 0 5%;
+  }
+  .formNavbar {
+    display: none !important;
+  }
+}
+/* Pagefeed */
+
+.formNavbar {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  width: 50%;
+  margin: 10dvh auto 1dvh;
+}
+
+.formNavbar-item {
+  padding: 20px 0;
+  position: relative;
+  color: gray;
+  font-weight: bolder;
+}
+
+.active {
+  color: #5e5656 !important;
+}
+
+.line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 4px;
+  z-index: 1;
+  width: 99%;
+  background: #5e5656;
+}
+
+.fa-circle {
+  position: absolute;
+  top: -10%;
+  color: gray;
+  left: 50%;
+}
+
+.formNavbar-item:first-child .fa-circle {
+  left: 0 !important;
+}
+
+.formNavbar-item:last-child .fa-circle {
+  left: 100% !important;
 }

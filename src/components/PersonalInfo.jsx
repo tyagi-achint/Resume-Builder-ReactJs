@@ -7,38 +7,62 @@ export default function PersonalInfo(props) {
       <Link to="/" className="backHome btn">
         Home
       </Link>
+      <h1 className="currentPage">{props.currentPage}</h1>
+
       <div className="formDiv">
-        <h4 className="currentPage">{props.currentPage}</h4>
-
-        <form action="">
-          <label for="fullName">Full Name:</label>
-          <input type="text" id="fullName" name="fullName" required />
-
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required />
-
-          <label for="phoneNumber">Phone Number (with country code):</label>
-          <input type="tel" id="phoneNumber" name="phoneNumber" required />
-
-          <label for="personalLink">Personal Website Link:</label>
-          <input type="url" id="personalLink" name="personalLink" />
-
-          <label for="githubLink">GitHub Link:</label>
-          <input type="url" id="githubLink" name="githubLink" />
-
-          <label for="linkedinLink">LinkedIn Link:</label>
-          <input type="url" id="linkedinLink" name="linkedinLink" />
-
-          <label for="twitterLink">Twitter Link:</label>
-          <input type="url" id="twitterLink" name="twitterLink" />
-
-          <label for="instagramLink">Instagram Link:</label>
-          <input type="url" id="instagramLink" name="instagramLink" />
-
-          <label for="currentPlace">Current Place:</label>
-          <input type="text" id="currentPlace" name="currentPlace" />
-
-          <button type="submit">Submit</button>
+        <form>
+          <div>
+            <label htmlFor="fullName">
+              <i className="fa-solid fa-user" />
+            </label>
+            <input
+              type="text"
+              name="fullName"
+              placeholder="Full Name"
+              required
+            />
+            <label htmlFor="email">
+              <i className="fa-solid fa-envelope" />
+            </label>
+            <input type="email" name="email" placeholder="Email" required />
+            <label htmlFor="phoneNumber">
+              <i className="fa-solid fa-mobile-screen" />
+            </label>
+            <input
+              type="tel"
+              name="phoneNumber"
+              placeholder="Phone(+country code)"
+            />
+            <label htmlFor="currentPlace">
+              <i className="fa-solid fa-location-dot" />
+            </label>
+            <input type="text" name="currentPlace" placeholder="City, State" />
+          </div>
+          <div>
+            <label htmlFor="personalLink">
+              <i className="fa-solid fa-link" />
+            </label>
+            <input
+              type="url"
+              name="personalLink"
+              placeholder="Personal Website"
+            />
+            <label htmlFor="githubLink">
+              <i className="fa-brands fa-github"></i>
+            </label>
+            <input type="url" name="githubLink" placeholder="Github" />
+            <label htmlFor="linkedinLink">
+              <i className="fa-brands fa-linkedin" />
+            </label>
+            <input type="url" name="linkedinLink" placeholder="LinkedIn" />
+            <label htmlFor="twitterLink">
+              <i className="fa-brands fa-square-twitter" />
+            </label>
+            <input type="url" name="twitterLink" placeholder="Twitter" />
+          </div>
+          <button className="btn" type="submit">
+            Next <i className="fa-solid fa-right-long" />
+          </button>
         </form>
       </div>
     </div>
