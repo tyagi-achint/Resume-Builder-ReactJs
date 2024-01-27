@@ -1,0 +1,20 @@
+#homePage {
+  text-align: center;
+  width: 50%;
+  margin: auto;
+  background: #fffff7cf;
+  border-radius: 10px;
+  padding: 10px;
+}
+#homePage h1 {
+  color: #453838;
+  text-align: left;
+  font-family: "Rowdies", sans-serif;
+  letter-spacing: 1px;
+  margin-left: 10px;
+}
+#homePage .createResume {
+  display: inherit;
+  margin: auto;
+  padding: 10px 20px;
+}

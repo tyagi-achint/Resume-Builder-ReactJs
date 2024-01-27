@@ -1,0 +1,41 @@
+.formNavbar {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  width: 50%;
+  margin: 10dvh auto 0;
+}
+
+.formNavbar-item {
+  padding: 20px 0;
+  position: relative;
+  color: gray;
+  font-weight: bolder;
+  flex: 1;
+  text-align: center;
+}
+
+.active {
+  color: #5e5656 !important;
+  font-size: x-large;
+}
+
+.activeBefore {
+  color: #5e5656 !important;
+}
+
+.line {
+  position: absolute;
+  top: -2px;
+  left: 10%;
+  height: 4px;
+  width: 80%;
+}
+
+.fa-circle {
+  position: absolute;
+  top: 0%;
+  color: gray;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

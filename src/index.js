@@ -1,9 +1,9 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import Home from './components/Home';
-import Layout from './components/Layout';
-import PersonalInfo from './components/PersonalInfo';
+import Home from './components/Home/Home';
+import Layout from './components/Layout/Layout';
+import Personal from './components/Personal/Personal';
 
 const router = new createBrowserRouter([
   {
@@ -16,7 +16,7 @@ const router = new createBrowserRouter([
       },
       {
         path: 'personalInfo',
-        element: <PersonalInfo currentPage="Personal Infomation" />
+        element: <Personal currentPage="Personal" />
       }
     ]
 

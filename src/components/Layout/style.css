@@ -39,41 +39,6 @@ h1.currentPage {
   font-variant-caps: small-caps;
 }
 
-/*-------------------------- Homepage -------------------------- */
-
-#homePage {
-  text-align: center;
-  width: 50%;
-  margin: auto;
-  background: #fffff7cf;
-  border-radius: 10px;
-  padding: 10px;
-}
-#homePage h1 {
-  color: #453838;
-  text-align: left;
-  font-family: "Rowdies", sans-serif;
-  letter-spacing: 1px;
-  margin-left: 10px;
-}
-#homePage .createResume {
-  display: inherit;
-  margin: auto;
-  padding: 10px 20px;
-}
-
-/*-------------------------- PersonalInfo -------------------------- */
-#personalInfo {
-  width: 65%;
-  margin: auto;
-}
-#personalInfo .backHome {
-  position: fixed;
-  right: 2dvw;
-  top: 1dvh;
-  padding: 7px 14px;
-}
-
 /* Form Div */
 .formDiv {
   margin: auto;
@@ -147,49 +112,4 @@ form .btn:hover {
   .formNavbar {
     display: none !important;
   }
-}
-/* Pagefeed */
-
-.formNavbar {
-  display: flex;
-  justify-content: space-between;
-  position: relative;
-  width: 50%;
-  margin: 10dvh auto 1dvh;
-}
-
-.formNavbar-item {
-  padding: 20px 0;
-  position: relative;
-  color: gray;
-  font-weight: bolder;
-}
-
-.active {
-  color: #5e5656 !important;
-}
-
-.line {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 4px;
-  z-index: 1;
-  width: 99%;
-  background: #5e5656;
-}
-
-.fa-circle {
-  position: absolute;
-  top: -10%;
-  color: gray;
-  left: 50%;
-}
-
-.formNavbar-item:first-child .fa-circle {
-  left: 0 !important;
-}
-
-.formNavbar-item:last-child .fa-circle {
-  left: 100% !important;
 }

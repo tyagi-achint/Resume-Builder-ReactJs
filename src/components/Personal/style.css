@@ -1,0 +1,10 @@
+#personalInfo {
+  width: 65%;
+  margin: auto;
+}
+#personalInfo .backHome {
+  position: fixed;
+  right: 2dvw;
+  top: 1dvh;
+  padding: 7px 14px;
+}
