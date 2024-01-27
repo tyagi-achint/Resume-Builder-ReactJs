@@ -35,9 +35,7 @@ export default function PersonalInfo(props) {
 
   const handleSave = (event) => {
     event.preventDefault();
-
     localStorage.setItem("personalInfoData", JSON.stringify(input));
-
     navigate("/education");
   };
 

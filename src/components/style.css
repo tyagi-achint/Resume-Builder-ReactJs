@@ -115,7 +115,16 @@ form .btn:hover {
 
 .formDiv .clearBtn {
   position: relative !important;
+  margin-left: 10px;
 }
+
+.formDiv .btn.addForm {
+  width: fit-content;
+  height: fit-content;
+  margin: auto;
+}
+
+/* Max Width: 900px */
 
 @media screen and (max-width: 900px) {
   #root {
