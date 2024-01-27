@@ -8,6 +8,7 @@ import Education from './components/Education/Education';
 import Experience from './components/Experience/Experience';
 import Projects from './components/Projects/Projects';
 import Skills from './components/Skills/Skills';
+import Resume from './components/Resume/Resume';
 
 
 const router = new createBrowserRouter([
@@ -39,6 +40,10 @@ const router = new createBrowserRouter([
       {
         path: 'skills',
         element: <Skills currentPage="Skills" />
+      },
+      {
+        path: 'resume',
+        element: <Resume currentPage="Resume" />
       }
     ]
 

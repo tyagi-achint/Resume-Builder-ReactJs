@@ -1,0 +1,15 @@
+#resume {
+  width: 25%;
+  margin: auto;
+  margin-bottom: 5dvh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fffff7cf;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+#resume .btn {
+  padding: 5px 10px;
+}
