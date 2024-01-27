@@ -29,6 +29,17 @@ body {
   color: white;
 }
 
+.clearBtn {
+  color: #bf3131 !important;
+  border-color: #bf3131 !important;
+}
+
+.clearBtn:hover {
+  background-color: #d04848 !important;
+  border-color: #d04848 !important;
+  color: white !important;
+}
+
 /* Page Heading */
 
 h1.currentPage {
@@ -81,17 +92,29 @@ form label {
 }
 form .btn {
   width: fit-content;
-  grid-column: 2;
   padding: 5px 15px;
   border-color: #9ad4ff;
   color: black !important;
   background: #9ad4ff !important;
 }
 
+form .btnBack {
+  grid-column: 1;
+  justify-self: end;
+  margin-right: 10px;
+}
+form .btnNext {
+  grid-column: 2;
+}
+
 form .btn:hover {
   color: #005ea5 !important;
   background-color: transparent !important;
   border-color: #005ea5 !important;
+}
+
+.formDiv .clearBtn {
+  position: relative !important;
 }
 
 @media screen and (max-width: 900px) {

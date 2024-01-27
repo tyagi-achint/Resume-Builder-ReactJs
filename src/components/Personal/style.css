@@ -4,7 +4,14 @@
 }
 #personalInfo .backHome {
   position: fixed;
-  right: 2dvw;
+  right: 1dvw;
   top: 1dvh;
-  padding: 7px 14px;
+  padding: 2dvh 2dvw;
+  font-size: medium;
+}
+
+@media screen and (max-width: 900px) {
+  #personalInfo {
+    margin: 6dvh auto;
+  }
 }

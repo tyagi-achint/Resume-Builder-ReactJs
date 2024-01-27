@@ -3,14 +3,14 @@ import React, { useState } from "react";
 import Pagefeed from "../Pagefeed/Pagefeed";
 import "./style.css";
 
-export default function Education(props) {
+export default function Projects(props) {
   const pageName = props.currentPage;
 
   const navigate = useNavigate();
 
   const handleSave = (event) => {
     event.preventDefault();
-    navigate("/experience");
+    navigate("/skills");
   };
 
   const handleBack = (event) => {
@@ -20,7 +20,7 @@ export default function Education(props) {
   return (
     <>
       <Pagefeed currentPage={pageName} />
-      <div id="educationInfo">
+      <div id="projectsInfo">
         <h1 className="currentPage">{pageName} Information </h1>
 
         <div className="formDiv">

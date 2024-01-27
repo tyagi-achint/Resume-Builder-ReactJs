@@ -1,0 +1,7 @@
+.clearBtn {
+  position: fixed;
+  top: 1dvh;
+  left: 1dvw;
+  padding: 2dvh 2dvw;
+  font-size: medium;
+}

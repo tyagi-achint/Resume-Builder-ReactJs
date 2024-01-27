@@ -4,6 +4,11 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Home from './components/Home/Home';
 import Layout from './components/Layout/Layout';
 import Personal from './components/Personal/Personal';
+import Education from './components/Education/Education';
+import Experience from './components/Experience/Experience';
+import Projects from './components/Projects/Projects';
+import Skills from './components/Skills/Skills';
+
 
 const router = new createBrowserRouter([
   {
@@ -15,8 +20,25 @@ const router = new createBrowserRouter([
         element: <Home />,
       },
       {
-        path: 'personalInfo',
+        path: 'personal',
         element: <Personal currentPage="Personal" />
+      },
+      {
+        path: 'education',
+        element: <Education currentPage="Education" />
+      }
+      ,
+      {
+        path: 'experience',
+        element: <Experience currentPage="Experience" />
+      },
+      {
+        path: 'projects',
+        element: <Projects currentPage="Projects" />
+      },
+      {
+        path: 'skills',
+        element: <Skills currentPage="Skills" />
       }
     ]
 

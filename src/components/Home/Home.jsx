@@ -11,7 +11,7 @@ export default function Home() {
         Effortless and Fast
       </h1>
 
-      <Link to="/personalInfo" className="createResume btn">
+      <Link to="/personal" className="createResume btn">
         Create
       </Link>
     </div>
