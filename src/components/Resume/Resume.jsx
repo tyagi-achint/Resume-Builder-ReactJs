@@ -1,14 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import "./style.css";
-import {
-  Document,
-  PDFViewer,
-  Page,
-  Text,
-  View,
-  StyleSheet,
-} from "@react-pdf/renderer";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import ResumeContent from "./firstResume";
+import html2pdf from "html2pdf.js";
 
 export default function Resume() {
   const [personalData, setPersonalData] = useState({});
@@ -16,6 +10,8 @@ export default function Resume() {
   const [experienceData, setExperienceData] = useState({});
   const [projectData, setProjectData] = useState({});
   const [skillsData, setSkillsData] = useState({});
+  const navigate = useNavigate();
+  const resumeContentRef = useRef(null);
 
   useEffect(() => {
     const fetchData = () => {
@@ -38,45 +34,28 @@ export default function Resume() {
     fetchData();
   }, []);
 
-  const handleDownload = () => {};
+  const handleDownload = () => {
+    const element = resumeContentRef.current;
 
-  const navigate = useNavigate();
+    if (element) {
+      const options = {
+        margin: 0,
+        filename: "resume.pdf",
+        image: { type: "jpeg", quality: 0.98 },
+        html2canvas: { scale: 2, logging: true, scrollY: 0 },
+        jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
+      };
+
+      html2pdf(element, options);
+    }
+  };
 
   const handleBack = () => {
     navigate(-1);
   };
 
-  const styles = StyleSheet.create({
-    page: {
-      flexDirection: "column",
-      backgroundColor: "white",
-    },
-    section: {
-      margin: 5,
-      padding: 5,
-      flexGrow: 1,
-    },
-  });
-
-  const MyDocument = () => (
-    <Document>
-      <Page size="A4" style={styles.page}>
-        <View style={styles.section}>
-          <Text
-            style={{ backgroundColor: "red" }}
-          >{`Full Name: ${personalData.fullName}`}</Text>
-        </View>
-      </Page>
-    </Document>
-  );
-
   return (
     <>
-      <div style={{ height: "75dvh", width: "80dvw", margin: "10px auto" }}>
-        <PDFViewer style={{ width: "100%", height: "100%" }}>
-          <MyDocument />
-        </PDFViewer>
-      </div>
       <div id="resume">
         <div>
           <button className="btn" onClick={handleBack}>
@@ -88,6 +67,23 @@ export default function Resume() {
             Download Resume <i className="fa-solid fa-download" />
           </button>
         </div>
+      </div>
+      <div
+        style={{
+          overflowY: "auto",
+          width: "803px",
+          height: "300px",
+          margin: "auto",
+        }}
+      >
+        <ResumeContent
+          ref={resumeContentRef}
+          personalData={personalData}
+          educationData={educationData}
+          skillsData={skillsData}
+          experienceData={experienceData}
+          projectData={projectData}
+        />
       </div>
     </>
   );

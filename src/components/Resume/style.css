@@ -1,5 +1,5 @@
 #resume {
-  width: 25%;
+  width: fit-content;
   margin: auto;
   margin-bottom: 5dvh;
   display: flex;
@@ -12,4 +12,5 @@
 
 #resume .btn {
   padding: 5px 10px;
+  margin: 10px;
 }

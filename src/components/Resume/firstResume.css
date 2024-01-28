@@ -1,0 +1,262 @@
+@import url(https://fonts.googleapis.com/css?family=Varela+Round);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+}
+
+.section-padding {
+  padding: 2%;
+}
+
+.first {
+  padding-left: 1%;
+  height: 100%;
+  background: #fff;
+  width: 32%;
+  float: left;
+  color: #343638;
+}
+
+.name {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-left: 2dvw;
+  margin-bottom: 2dvh;
+}
+
+.circle-resume {
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  background-color: #6c9;
+}
+
+.name-wrapper {
+  font-size: 35px;
+  font-family: "Varela Round", sans-serif;
+  color: #343638;
+  text-transform: uppercase;
+  line-height: 1em;
+  position: absolute;
+  z-index: 1;
+  left: 30%;
+}
+
+.first .contact-info {
+  margin: 0;
+  width: 100%;
+  color: #4a4e51;
+}
+
+.first .contact-info ul {
+  margin-bottom: 1.5dvh;
+}
+
+.list-titles {
+  text-align: center;
+  font-weight: 600;
+  width: 20%;
+  padding: 0;
+  list-style: none;
+  float: left;
+}
+
+.list-content {
+  width: 80%;
+  text-align: left;
+  font-weight: 800;
+  padding: 0;
+  list-style: none;
+  float: left;
+}
+
+.first li {
+  margin-bottom: 5px;
+  overflow-wrap: break-word;
+}
+
+.first .skills,
+.first .hobbies,
+.first .education {
+  width: 90%;
+  margin: auto;
+  margin-bottom: 2dvh;
+}
+
+.first .skills h2,
+.hobbies h2,
+.education h2 {
+  margin: 0;
+  text-decoration: underline;
+}
+
+.first .skills ul,
+.hobbies ul,
+.education ul {
+  margin-bottom: 5px;
+  list-style: none;
+}
+
+.first .skills ul li,
+.hobbies ul li {
+  width: 90%;
+  padding: 1px 5px 3px;
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-position: under;
+  background-color: #ccc;
+}
+
+.contact-social {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+}
+
+.contact-social a {
+  color: #6c9;
+  text-decoration: underline;
+  font-weight: 600;
+  font-variant-caps: small-caps;
+}
+
+.social-item {
+  flex: 0 0 20%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.social-item i {
+  margin: 0 5px 0 10px;
+}
+
+.resume-objective {
+  position: relative;
+  font-weight: 900;
+  word-spacing: -2px;
+  font-family: monospace;
+  font-size: large;
+}
+
+.second {
+  display: flex;
+  flex-direction: column;
+  background: #3d3e42;
+  padding-left: 5%;
+  width: 68%;
+  float: left;
+  position: relative;
+  color: #9099a0;
+  font-weight: 300;
+  height: 100%;
+  padding-top: 100px;
+}
+
+.second h2 {
+  color: #6c9;
+  text-align: left;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.second h2::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -2px;
+  left: 30px;
+  width: 100%;
+  height: 2px;
+  background-color: #6c9;
+  box-shadow: 8px 3px 9px 0px #66cc99cf;
+}
+
+.second .company {
+  width: 40%;
+  float: left;
+  text-align: left;
+  padding-left: 5%;
+  margin-bottom: 20px;
+}
+.second .experience,
+.second .projects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.experience .title,
+.projects .title {
+  color: white;
+  margin-bottom: 10px;
+  text-align: left;
+  text-transform: uppercase;
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+.second .job-wrapper {
+  width: 60%;
+  float: left;
+  text-align: left;
+  padding-right: 5%;
+  margin-bottom: 20px;
+}
+
+.job-wrapper .title {
+  font-size: medium;
+  text-align: end;
+  color: #b9b9b9;
+  margin-bottom: 0 !important;
+  margin-top: 10px;
+}
+
+.projects a {
+  color: cadetblue;
+  text-decoration: underline;
+  font-weight: 600;
+  text-transform: lowercase;
+  font-size: medium;
+}
+
+.experience div,
+.projects div {
+  font-weight: 400;
+}
+
+.education-item {
+  border-bottom: 2px solid #ddd;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+}
+
+.education-item div.firstEdu {
+  width: 60%;
+  float: left;
+}
+
+.education-item div.secondEdu {
+  width: 40%;
+  float: left;
+}
+
+.education-item h3 {
+  color: #6c9;
+  margin: 0;
+}
+
+.education-item span {
+  font-weight: 600;
+  color: #333;
+}
