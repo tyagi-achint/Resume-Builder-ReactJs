@@ -61,6 +61,8 @@ export default function Extra(props) {
 
   const handleBack = (event) => {
     event.preventDefault();
+    localStorage.setItem("extraInfoData", JSON.stringify(input));
+
     navigate(-1);
   };
 

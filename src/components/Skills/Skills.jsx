@@ -35,6 +35,8 @@ export default function SkillsInfo(props) {
 
   const handleBack = (event) => {
     event.preventDefault();
+    localStorage.setItem("skillsInfoData", JSON.stringify(skills));
+
     navigate(-1);
   };
 

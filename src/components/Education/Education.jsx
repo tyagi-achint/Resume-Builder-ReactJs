@@ -58,6 +58,7 @@ export default function EducationInfo(props) {
 
   const handleBack = (event) => {
     event.preventDefault();
+    localStorage.setItem("educationInfoData", JSON.stringify(educations));
     navigate(-1);
   };
 

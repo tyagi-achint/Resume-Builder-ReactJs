@@ -44,31 +44,31 @@ const firstResume = forwardRef(
               educationData.map((edu, index) => (
                 <div key={index} className="education-item">
                   <div className="firstEdu">
-                    <h3>{edu.institution}</h3>
-                    <span>{edu.grade}</span>
+                    <h3>{edu.institution || "_"}</h3>
+                    <span>{edu.grade || "_"}</span>
                   </div>
                   <div className="secondEdu">
-                    <h3>{edu.qualification}</h3>
+                    <h3>{edu.qualification || "_"}</h3>
                     <span>
-                      {edu.startYear} - {edu.endYear}
+                      {edu.startYear} - {edu.endYear || "_"}
                     </span>
                   </div>
-                  <span>{edu.achievement}</span>
+                  <span>{edu.achievement || "_"}</span>
                 </div>
               ))
             ) : (
               <div key="single-education" className="education-item">
                 <div className="firstEdu">
-                  <h3>{educationData.institution}</h3>
-                  <span>{educationData.grade}</span>
+                  <h3>{educationData.institution || "_"}</h3>
+                  <span>{educationData.grade || "_"}</span>
                 </div>
                 <div className="secondEdu">
-                  <h3>{educationData.qualification}</h3>
+                  <h3>{educationData.qualification || "_"}</h3>
                   <span>
-                    {educationData.startYear} - {educationData.endYear}
+                    {educationData.startYear} - {educationData.endYear || "_"}
                   </span>
                 </div>
-                <span>{educationData.achievement}</span>
+                <span>{educationData.achievement || "_"}</span>
               </div>
             )}
           </div>
@@ -77,7 +77,7 @@ const firstResume = forwardRef(
             <h2>Skills</h2>
             <ul>
               {Object.keys(skillsData).map((key) => (
-                <li key={key}>{skillsData[key]}</li>
+                <li key={key}>{skillsData[key] || "_"}</li>
               ))}
             </ul>
           </div>
@@ -86,46 +86,56 @@ const firstResume = forwardRef(
             <h2>Interests</h2>
             <ul>
               {extraData?.hobbies?.map((hobby, index) => (
-                <li key={index}>{hobby}</li>
+                <li key={index}>{hobby || "_"}</li>
               ))}
             </ul>
           </div>
           <div className="subFirstDiv">
             <h2>Personal Skills</h2>
             <ul>
-              {extraData?.personalSkills?.map((hobby, index) => (
-                <li key={index}>{hobby}</li>
+              {extraData?.personalSkills?.map((skill, index) => (
+                <li key={index}>{skill || "_"}</li>
               ))}
             </ul>
           </div>
         </section>
         <section className="second section-padding">
           <div className="contact-social">
-            <div className="social-item">
-              <i className="fa-solid fa-link" />
-              <a href={personalData.personalLink} target="_black">
-                @janderson
-              </a>
-            </div>
-            <div className="social-item">
-              <i className="fa-brands fa-linkedin" />
-              <a href={personalData.linkedinLink}>janderson</a>
-            </div>
-            <div className="social-item">
-              <i className="fa-brands fa-square-github" />
-              <a href={personalData.githubLink} target="_black">
-                janderson
-              </a>
-            </div>
-            <div className="social-item">
-              <i className="fa-brands fa-square-twitter" />
-              <a href={personalData.twitterLink} target="_black">
-                janderson
-              </a>
-            </div>
+            {personalData.personalLink && (
+              <div className="social-item">
+                <i className="fa-solid fa-link" />
+                <a href={personalData.personalLink} target="_black">
+                  {personalData.personalLink}
+                </a>
+              </div>
+            )}
+            {personalData.linkedinLink && (
+              <div className="social-item">
+                <i className="fa-brands fa-linkedin" />
+                <a href={personalData.linkedinLink}>
+                  {personalData.linkedinLink}
+                </a>
+              </div>
+            )}
+            {personalData.githubLink && (
+              <div className="social-item">
+                <i className="fa-brands fa-square-github" />
+                <a href={personalData.githubLink} target="_black">
+                  {personalData.githubLink}
+                </a>
+              </div>
+            )}
+            {personalData.twitterLink && (
+              <div className="social-item">
+                <i className="fa-brands fa-square-twitter" />
+                <a href={personalData.twitterLink} target="_black">
+                  {personalData.twitterLink}
+                </a>
+              </div>
+            )}
           </div>
           <div className="resume-objective">
-            <p>{extraData.objective}</p>
+            <p>{extraData.objective || "_"}</p>
           </div>
           <div className="experience">
             <h2>Experience</h2>
@@ -133,24 +143,28 @@ const firstResume = forwardRef(
               experienceData.map((experience, index) => (
                 <div key={index} style={{ width: "100%" }}>
                   <div className="company">
-                    <div className="title">{experience.organization}</div>
-                    <div className="time">{experience.duration}</div>
+                    <div className="title">
+                      {experience.organization || "_"}
+                    </div>
+                    <div className="time">{experience.duration || "_"}</div>
                   </div>
                   <div className="job-wrapper">
-                    <div className="title">{experience.skills}</div>
-                    <div>{experience.description}</div>
+                    <div className="title">{experience.skills || "_"}</div>
+                    <div>{experience.description || "_"}</div>
                   </div>
                 </div>
               ))
             ) : (
               <div key="single-experience" style={{ width: "100%" }}>
                 <div className="company">
-                  <div className="title">{experienceData.organization}</div>
-                  <div className="time">{experienceData.duration}</div>
+                  <div className="title">
+                    {experienceData.organization || "_"}
+                  </div>
+                  <div className="time">{experienceData.duration || "_"}</div>
                 </div>
                 <div className="job-wrapper">
-                  <div className="title">{experienceData.title}</div>
-                  <div>{experienceData.description}</div>
+                  <div className="title">{experienceData.title || "_"}</div>
+                  <div>{experienceData.description || "_"}</div>
                 </div>
               </div>
             )}
@@ -162,28 +176,30 @@ const firstResume = forwardRef(
               projectData.map((project, index) => (
                 <div key={index} style={{ width: "100%" }}>
                   <div className="company">
-                    <div className="title">{project.title}</div>
-                    <div>{project.skills}</div>
+                    <div className="title">{project.title || "_"}</div>
+                    <div>{project.skills || "_"}</div>
                   </div>
                   <div className="job-wrapper">
                     <div className="title">
-                      <a href={project.link}>{project.link || "Link"}</a>
+                      <a href={project.link || "#"}>{project.link || "_"}</a>
                     </div>
-                    <div>{project.description}</div>
+                    <div>{project.description || "_"}</div>
                   </div>
                 </div>
               ))
             ) : (
               <div key="single-project" style={{ width: "100%" }}>
                 <div className="company">
-                  <div className="title">{projectData.title}</div>
-                  <div>{projectData.skills}</div>
+                  <div className="title">{projectData.title || "_"}</div>
+                  <div>{projectData.skills || "_"}</div>
                 </div>
                 <div className="job-wrapper">
                   <div className="title">
-                    <a href={projectData.link}>{projectData.link || "Link"}</a>
+                    <a href={projectData.link || "#"}>
+                      {projectData.link || "_"}
+                    </a>
                   </div>
-                  <div>{projectData.description}</div>
+                  <div>{projectData.description || "_"}</div>
                 </div>
               </div>
             )}

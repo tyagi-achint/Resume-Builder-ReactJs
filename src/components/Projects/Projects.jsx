@@ -54,6 +54,8 @@ export default function ProjectInfo(props) {
 
   const handleBack = (event) => {
     event.preventDefault();
+    localStorage.setItem("projectInfoData", JSON.stringify(projects));
+
     navigate(-1);
   };
 
@@ -122,7 +124,7 @@ export default function ProjectInfo(props) {
                   <i className="fa-solid fa-link"></i>
                 </label>
                 <input
-                  type="url"
+                  type="text"
                   name="link"
                   placeholder="Link (optional)"
                   value={project.link}

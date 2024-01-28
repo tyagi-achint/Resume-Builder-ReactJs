@@ -113,7 +113,7 @@ export default function PersonalInfo(props) {
                 <i className="fa-solid fa-link" />
               </label>
               <input
-                type="url"
+                type="text"
                 name="personalLink"
                 value={input.personalLink}
                 onChange={handleInput}
@@ -123,7 +123,7 @@ export default function PersonalInfo(props) {
                 <i className="fa-brands fa-github"></i>
               </label>
               <input
-                type="url"
+                type="text"
                 name="githubLink"
                 value={input.githubLink}
                 onChange={handleInput}
@@ -133,7 +133,7 @@ export default function PersonalInfo(props) {
                 <i className="fa-brands fa-linkedin" />
               </label>
               <input
-                type="url"
+                type="text"
                 name="linkedinLink"
                 value={input.linkedinLink}
                 onChange={handleInput}
@@ -143,7 +143,7 @@ export default function PersonalInfo(props) {
                 <i className="fa-brands fa-square-twitter" />
               </label>
               <input
-                type="url"
+                type="text"
                 name="twitterLink"
                 value={input.twitterLink}
                 onChange={handleInput}

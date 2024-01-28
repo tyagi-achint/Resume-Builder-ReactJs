@@ -54,6 +54,8 @@ export default function ExperienceInfo(props) {
 
   const handleBack = (event) => {
     event.preventDefault();
+    localStorage.setItem("experienceInfoData", JSON.stringify(experiences));
+
     navigate(-1);
   };
 

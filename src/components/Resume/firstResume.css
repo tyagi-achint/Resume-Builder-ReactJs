@@ -112,8 +112,8 @@ body {
 .contact-social {
   display: flex;
   flex-wrap: wrap;
-  width: 80%;
-  margin: 0 auto;
+  width: 100%;
+  margin: 0;
   justify-content: center;
 }
 
@@ -121,7 +121,6 @@ body {
   color: #6c9;
   text-decoration: underline;
   font-weight: 600;
-  font-variant-caps: small-caps;
 }
 
 .social-item {
@@ -129,10 +128,13 @@ body {
   display: flex;
   align-items: center;
   margin-bottom: 5px;
+  overflow-wrap: break-word;
+  font-size: smaller;
 }
 
 .social-item i {
   margin: 0 5px 0 10px;
+  font-size: x-large;
 }
 
 .resume-objective {
@@ -193,7 +195,7 @@ body {
 .experience .title,
 .projects .title {
   color: white;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   text-align: left;
   text-transform: uppercase;
   font-size: 1.2em;
@@ -203,7 +205,7 @@ body {
 .second .job-wrapper {
   width: 60%;
   float: left;
-  text-align: left;
+  text-align: right;
   padding-right: 5%;
   margin-bottom: 20px;
 }
@@ -212,8 +214,8 @@ body {
   font-size: medium;
   text-align: end;
   color: #b9b9b9;
-  margin-bottom: 0 !important;
-  margin-top: 10px;
+  margin-bottom: 5px;
+  margin-top: 1px;
 }
 
 .projects a {
@@ -231,17 +233,18 @@ body {
 
 .education-item {
   padding-bottom: 5px;
+  border-bottom: 2px solid #ccc;
 }
 
 .education-item div.firstEdu {
-  width: 60%;
+  width: 55%;
   float: left;
   margin-top: 10px;
 }
 
 .education-item div.secondEdu {
   margin-top: 10px;
-  width: 40%;
+  width: 45%;
   float: left;
 }
 
@@ -253,4 +256,12 @@ body {
 .education-item span {
   font-weight: 600;
   color: #333;
+  margin: 5px 0;
+  display: block;
+}
+
+.education-item::after {
+  content: "";
+  display: table;
+  clear: both;
 }
