@@ -2,13 +2,6 @@
   width: 65%;
   margin: auto;
 }
-#personalInfo .backHome {
-  position: absolute;
-  left: 1dvw;
-  top: 1dvh;
-  padding: 2dvh 2dvw;
-  font-size: medium;
-}
 
 @media screen and (max-width: 900px) {
   #personalInfo {

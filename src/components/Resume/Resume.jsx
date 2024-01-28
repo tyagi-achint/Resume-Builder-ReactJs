@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./style.css";
 import { useEffect, useRef, useState } from "react";
 import ResumeContent from "./firstResume";
@@ -10,6 +10,7 @@ export default function Resume() {
   const [experienceData, setExperienceData] = useState({});
   const [projectData, setProjectData] = useState({});
   const [skillsData, setSkillsData] = useState({});
+  const [extraData, setExtraData] = useState({});
   const navigate = useNavigate();
   const resumeContentRef = useRef(null);
 
@@ -29,6 +30,8 @@ export default function Resume() {
 
       const storedSkillsData = localStorage.getItem("skillsInfoData");
       setSkillsData(JSON.parse(storedSkillsData) || {});
+      const storedExtraData = localStorage.getItem("extraInfoData");
+      setExtraData(JSON.parse(storedExtraData) || {});
     };
 
     fetchData();
@@ -53,9 +56,29 @@ export default function Resume() {
   const handleBack = () => {
     navigate(-1);
   };
-
   return (
     <>
+      <Link to="/" className="backHome btn">
+        Home
+      </Link>
+      <div
+        style={{
+          overflowY: "auto",
+          width: "803px",
+          height: "400px",
+          margin: "20px auto",
+        }}
+      >
+        <ResumeContent
+          ref={resumeContentRef}
+          personalData={personalData}
+          educationData={educationData}
+          skillsData={skillsData}
+          experienceData={experienceData}
+          projectData={projectData}
+          extraData={extraData}
+        />
+      </div>
       <div id="resume">
         <div>
           <button className="btn" onClick={handleBack}>
@@ -67,23 +90,6 @@ export default function Resume() {
             Download Resume <i className="fa-solid fa-download" />
           </button>
         </div>
-      </div>
-      <div
-        style={{
-          overflowY: "auto",
-          width: "803px",
-          height: "300px",
-          margin: "auto",
-        }}
-      >
-        <ResumeContent
-          ref={resumeContentRef}
-          personalData={personalData}
-          educationData={educationData}
-          skillsData={skillsData}
-          experienceData={experienceData}
-          projectData={projectData}
-        />
       </div>
     </>
   );

@@ -3,7 +3,14 @@ import "./firstResume.css";
 
 const firstResume = forwardRef(
   (
-    { personalData, educationData, skillsData, experienceData, projectData },
+    {
+      personalData,
+      educationData,
+      skillsData,
+      experienceData,
+      projectData,
+      extraData,
+    },
     ref
   ) => {
     return (
@@ -31,12 +38,11 @@ const firstResume = forwardRef(
               <li>{personalData.email}</li>
             </ul>
           </div>
-          <div className="education">
+          <div className="subFirstDiv">
             <h2>Education</h2>
-            {Object.keys(educationData).map((key) => {
-              const edu = educationData[key];
-              return (
-                <div key={key} className="education-item">
+            {Array.isArray(educationData) ? (
+              educationData.map((edu, index) => (
+                <div key={index} className="education-item">
                   <div className="firstEdu">
                     <h3>{edu.institution}</h3>
                     <span>{edu.grade}</span>
@@ -49,10 +55,25 @@ const firstResume = forwardRef(
                   </div>
                   <span>{edu.achievement}</span>
                 </div>
-              );
-            })}
+              ))
+            ) : (
+              <div key="single-education" className="education-item">
+                <div className="firstEdu">
+                  <h3>{educationData.institution}</h3>
+                  <span>{educationData.grade}</span>
+                </div>
+                <div className="secondEdu">
+                  <h3>{educationData.qualification}</h3>
+                  <span>
+                    {educationData.startYear} - {educationData.endYear}
+                  </span>
+                </div>
+                <span>{educationData.achievement}</span>
+              </div>
+            )}
           </div>
-          <div className="skills">
+
+          <div className="subFirstDiv">
             <h2>Skills</h2>
             <ul>
               {Object.keys(skillsData).map((key) => (
@@ -61,12 +82,20 @@ const firstResume = forwardRef(
             </ul>
           </div>
 
-          <div className="hobbies">
-            <h2>Hobbies</h2>
+          <div className="subFirstDiv">
+            <h2>Interests</h2>
             <ul>
-              <li>one</li>
-              <li>two</li>
-              <li>third</li>
+              {extraData?.hobbies?.map((hobby, index) => (
+                <li key={index}>{hobby}</li>
+              ))}
+            </ul>
+          </div>
+          <div className="subFirstDiv">
+            <h2>Personal Skills</h2>
+            <ul>
+              {extraData?.personalSkills?.map((hobby, index) => (
+                <li key={index}>{hobby}</li>
+              ))}
             </ul>
           </div>
         </section>
@@ -96,18 +125,14 @@ const firstResume = forwardRef(
             </div>
           </div>
           <div className="resume-objective">
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta
-              quasi doloremque aliquam eos laudantium dolores facere maxime
-              omnis pariatur accusamus.
-            </p>
+            <p>{extraData.objective}</p>
           </div>
           <div className="experience">
             <h2>Experience</h2>
             {Array.isArray(experienceData) ? (
               experienceData.map((experience, index) => (
-                <div style={{ width: "100%" }}>
-                  <div key={index} className="company">
+                <div key={index} style={{ width: "100%" }}>
+                  <div className="company">
                     <div className="title">{experience.organization}</div>
                     <div className="time">{experience.duration}</div>
                   </div>
@@ -118,7 +143,7 @@ const firstResume = forwardRef(
                 </div>
               ))
             ) : (
-              <div style={{ width: "100%" }}>
+              <div key="single-experience" style={{ width: "100%" }}>
                 <div className="company">
                   <div className="title">{experienceData.organization}</div>
                   <div className="time">{experienceData.duration}</div>
@@ -135,8 +160,8 @@ const firstResume = forwardRef(
             <h2>Projects</h2>
             {Array.isArray(projectData) ? (
               projectData.map((project, index) => (
-                <div style={{ width: "100%" }}>
-                  <div key={index} className="company">
+                <div key={index} style={{ width: "100%" }}>
+                  <div className="company">
                     <div className="title">{project.title}</div>
                     <div>{project.skills}</div>
                   </div>
@@ -149,7 +174,7 @@ const firstResume = forwardRef(
                 </div>
               ))
             ) : (
-              <div style={{ width: "100%" }}>
+              <div key="single-project" style={{ width: "100%" }}>
                 <div className="company">
                   <div className="title">{projectData.title}</div>
                   <div>{projectData.skills}</div>

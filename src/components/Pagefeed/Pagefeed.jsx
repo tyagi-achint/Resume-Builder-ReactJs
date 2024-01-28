@@ -3,7 +3,14 @@ import "./style.css";
 
 export default function Pagefeed(props) {
   const pageName = props.currentPage;
-  const pageId = ["Personal", "Education", "Experience", "Projects", "Skills"];
+  const pageId = [
+    "Personal",
+    "Education",
+    "Experience",
+    "Projects",
+    "Skills",
+    "Extra",
+  ];
 
   const calculatePercentage = (value) => {
     const index = pageId.indexOf(value) + 1;
@@ -14,17 +21,25 @@ export default function Pagefeed(props) {
   const lineEffect = (value) => {
     const calculateValues = (value) => {
       if (value === "Personal") {
-        return 20;
+        return 25;
       } else if (value === "Education") {
-        return 10;
+        return 15;
       } else if (value === "Experience") {
+        return 10;
+      } else if (value === "Projects") {
         return 5;
+      } else if (value === "Skills") {
+        return -5;
       } else {
         return 0;
       }
     };
     const calculateValuesTwo = (value) => {
-      if (value === "Projects") {
+      if (value === "Personal") {
+        return -5;
+      } else if (value === "Projects") {
+        return 5;
+      } else if (value === "Skills") {
         return 10;
       } else {
         return 0;

@@ -1,0 +1,166 @@
+#extraInfo {
+  width: 50%;
+  margin: auto;
+  margin-bottom: 10dvh;
+}
+.formDivExtra {
+  margin: auto;
+  background: #fffff7cf;
+  border-radius: 10px;
+  padding: 20px 10px;
+}
+.formDivExtra form {
+  display: flex;
+  flex-wrap: wrap;
+}
+textarea {
+  display: block;
+  margin: auto;
+}
+div.input-block {
+  flex: 1 0 70%;
+  position: relative;
+  margin-bottom: 20px;
+}
+div.input-word {
+  flex: 1 0 35%;
+}
+div.input-block textarea + span.placeholder {
+  top: 20%;
+}
+
+div.input-block input,
+div.input-block textarea {
+  font-weight: 500;
+  border: 2px solid #ccc;
+  outline: none;
+  width: 50%;
+  background-color: transparent;
+  padding: 8px;
+  color: #2d2d2d;
+  border-radius: 5px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+div.input-block span.placeholder {
+  left: 27%;
+  font-weight: 900;
+  position: absolute;
+  padding: 0 4px;
+  color: #6c757d;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 0.2s;
+  transform-origin: 0% 0%;
+  background: transparent;
+  pointer-events: none;
+  border-radius: 5px;
+}
+
+div.input-block input:focus + span.placeholder,
+div.input-block textarea:focus + span.placeholder {
+  transform: scale(0.7) translateY(-35px);
+  box-shadow: 0px 0px 20px 2px #757575;
+  color: #495055;
+  background: #f8fdf8;
+}
+
+div.input-block input:focus,
+div.input-block textarea:focus {
+  outline: none;
+  box-shadow: 0px 0px 20px 2px #757575;
+  border: none;
+}
+.formDivExtra .clearBtn {
+  position: relative !important;
+  margin-left: 10px;
+}
+.divButton {
+  width: 100%;
+  text-align: center;
+}
+
+.formDivExtra form .btn:hover {
+  color: #005ea5 !important;
+  background-color: transparent !important;
+  border-color: #005ea5 !important;
+}
+.formDivExtra form .btn {
+  margin: 10px;
+  width: fit-content;
+  padding: 5px 15px;
+  border-color: #9ad4ff;
+  color: black !important;
+  background: #9ad4ff !important;
+}
+
+div.input-block input:not(:placeholder-shown) + span.placeholder,
+div.input-block textarea:not(:placeholder-shown) + span.placeholder {
+  transform: scale(0.7) translateY(-35px);
+  box-shadow: 0px 0px 20px 2px #757575;
+  color: #495055;
+  background: #f8fdf8;
+}
+
+div.input-block input:placeholder-shown + span.placeholder,
+div.input-block textarea:placeholder-shown + span.placeholder {
+  transform: translateY(-50%);
+  box-shadow: none;
+  background: transparent;
+}
+
+div.input-block input:focus + span.placeholder,
+div.input-block textarea:focus + span.placeholder {
+  transform: scale(0.7) translateY(-35px);
+  box-shadow: 0px 0px 20px 2px #757575;
+  color: #495055;
+  background: #f8fdf8;
+}
+
+@media screen and (max-width: 1100px) {
+  .formDivExtra form {
+    display: block;
+  }
+  div.input-block input,
+  div.input-block textarea {
+    width: 80%;
+  }
+  div.input-block span.placeholder {
+    left: 15%;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  div.input-block {
+    flex: 1 0 70%;
+    position: relative;
+  }
+  div.input-word {
+    flex: 1 0 35%;
+  }
+  div.input-word:nth-child(even) {
+    text-align: end;
+    margin-right: 2%;
+  }
+
+  div.input-word:nth-child(even) span.placeholder {
+    left: 51%;
+  }
+  div.input-word:nth-child(odd) span.placeholder {
+    left: 1%;
+  }
+  div.input-block textarea + span.placeholder {
+    top: 20%;
+  }
+  div.input-word:nth-child(even) span.placeholder {
+    left: 51%;
+  }
+  div.input-word:nth-child(odd) span.placeholder {
+    left: 1%;
+  }
+
+  div.input-word:nth-child(even) {
+    text-align: end;
+    margin-right: 2%;
+  }
+}

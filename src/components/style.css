@@ -9,6 +9,32 @@ body {
   min-height: 100vh;
 }
 
+/* Scroll Bar */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+/* Back Home Button */
+
+.backHome {
+  position: absolute;
+  left: 1dvw;
+  top: 1dvh;
+  padding: 2dvh 2dvw;
+  font-size: medium;
+}
 /* Button */
 
 .btn {
@@ -58,12 +84,12 @@ h1.currentPage {
   padding: 10px;
 }
 
-form {
+.formDiv form {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
 
-input {
+.formDiv input {
   margin-top: 0;
   width: 85%;
   background-color: transparent;
@@ -76,21 +102,21 @@ input {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-input:focus {
+.formDiv input:focus {
   outline: none;
   box-shadow: 0px 0px 20px 2px #757575;
   border: none;
 }
 
-form div {
+.formDiv form div {
   padding: 5%;
   display: grid;
   grid-template-columns: 12% 85%;
 }
-form label {
+.formDiv form label {
   font-size: x-large;
 }
-form .btn {
+.formDiv form .btn {
   width: fit-content;
   padding: 5px 15px;
   border-color: #9ad4ff;
@@ -98,16 +124,16 @@ form .btn {
   background: #9ad4ff !important;
 }
 
-form .btnBack {
+.formDiv form .btnBack {
   grid-column: 1;
   justify-self: end;
   margin-right: 10px;
 }
-form .btnNext {
+.formDiv form .btnNext {
   grid-column: 2;
 }
 
-form .btn:hover {
+.formDiv form .btn:hover {
   color: #005ea5 !important;
   background-color: transparent !important;
   border-color: #005ea5 !important;

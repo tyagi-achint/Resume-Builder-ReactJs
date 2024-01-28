@@ -84,30 +84,23 @@ body {
   overflow-wrap: break-word;
 }
 
-.first .skills,
-.first .hobbies,
-.first .education {
+.first .subFirstDiv {
   width: 90%;
   margin: auto;
   margin-bottom: 2dvh;
 }
 
-.first .skills h2,
-.hobbies h2,
-.education h2 {
+.first .subFirstDiv h2 {
   margin: 0;
   text-decoration: underline;
 }
 
-.first .skills ul,
-.hobbies ul,
-.education ul {
+.first .subFirstDiv ul {
   margin-bottom: 5px;
   list-style: none;
 }
 
-.first .skills ul li,
-.hobbies ul li {
+.first .subFirstDiv ul li {
   width: 90%;
   padding: 1px 5px 3px;
   font-weight: 800;
@@ -119,7 +112,8 @@ body {
 .contact-social {
   display: flex;
   flex-wrap: wrap;
-  width: 100%;
+  width: 80%;
+  margin: 0 auto;
   justify-content: center;
 }
 
@@ -131,10 +125,10 @@ body {
 }
 
 .social-item {
-  flex: 0 0 20%;
+  flex: 0 0 45%;
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .social-item i {
@@ -236,17 +230,17 @@ body {
 }
 
 .education-item {
-  border-bottom: 2px solid #ddd;
-  margin-bottom: 10px;
   padding-bottom: 5px;
 }
 
 .education-item div.firstEdu {
   width: 60%;
   float: left;
+  margin-top: 10px;
 }
 
 .education-item div.secondEdu {
+  margin-top: 10px;
   width: 40%;
   float: left;
 }
