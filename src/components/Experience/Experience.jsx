@@ -81,7 +81,8 @@ export default function ExperienceInfo(props) {
       <Pagefeed currentPage={pageName} />
       <div id="experienceInfo">
         <div className="aboveForm">
-          <h1 className="currentPage">{pageName} Information</h1>
+          <h1 className="currentPage">{`${pageName}/Internship Information`}</h1>
+
           <ImageAbove />
         </div>
 
@@ -98,7 +99,6 @@ export default function ExperienceInfo(props) {
                   placeholder="Organization"
                   value={experience.organization}
                   onChange={(e) => handleInputChange(e, index)}
-                  required
                 />
 
                 <label>
@@ -110,7 +110,6 @@ export default function ExperienceInfo(props) {
                   placeholder="Duration"
                   value={experience.duration}
                   onChange={(e) => handleInputChange(e, index)}
-                  required
                 />
 
                 <label>
@@ -121,7 +120,6 @@ export default function ExperienceInfo(props) {
                   placeholder="Short description"
                   value={experience.description}
                   onChange={(e) => handleInputChange(e, index)}
-                  required
                 ></input>
 
                 <label>
@@ -133,7 +131,6 @@ export default function ExperienceInfo(props) {
                   placeholder="Skills"
                   value={experience.skills}
                   onChange={(e) => handleInputChange(e, index)}
-                  required
                 />
               </div>
             ))}

@@ -56,6 +56,8 @@ export default function Resume() {
   const handleBack = () => {
     navigate(-1);
   };
+
+  console.log(experienceData);
   return (
     <>
       <Link to="/" className="backHome btn">

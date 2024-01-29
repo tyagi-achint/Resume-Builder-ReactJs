@@ -83,14 +83,6 @@ const firstResume = forwardRef(
           </div>
 
           <div className="subFirstDiv">
-            <h2>Interests</h2>
-            <ul>
-              {extraData?.hobbies?.map((hobby, index) => (
-                <li key={index}>{hobby || "_"}</li>
-              ))}
-            </ul>
-          </div>
-          <div className="subFirstDiv">
             <h2>Personal Skills</h2>
             <ul>
               {extraData?.personalSkills?.map((skill, index) => (
@@ -137,38 +129,29 @@ const firstResume = forwardRef(
           <div className="resume-objective">
             <p>{extraData.objective || "_"}</p>
           </div>
-          <div className="experience">
-            <h2>Experience</h2>
-            {Array.isArray(experienceData) ? (
-              experienceData.map((experience, index) => (
-                <div key={index} style={{ width: "100%" }}>
-                  <div className="company">
-                    <div className="title">
-                      {experience.organization || "_"}
+          {Array.isArray(experienceData) &&
+            experienceData.length > 0 &&
+            experienceData.some((item) =>
+              Object.values(item).some((value) => value.trim() !== "")
+            ) && (
+              <div className="experience">
+                <h2>Experience</h2>
+                {experienceData.map((experience, index) => (
+                  <div key={index} style={{ width: "100%" }}>
+                    <div className="company">
+                      <div className="title">
+                        {experience.organization || "_"}
+                      </div>
+                      <div className="time">{experience.duration || "_"}</div>
                     </div>
-                    <div className="time">{experience.duration || "_"}</div>
+                    <div className="job-wrapper">
+                      <div className="title">{experience.skills || "_"}</div>
+                      <div>{experience.description || "_"}</div>
+                    </div>
                   </div>
-                  <div className="job-wrapper">
-                    <div className="title">{experience.skills || "_"}</div>
-                    <div>{experience.description || "_"}</div>
-                  </div>
-                </div>
-              ))
-            ) : (
-              <div key="single-experience" style={{ width: "100%" }}>
-                <div className="company">
-                  <div className="title">
-                    {experienceData.organization || "_"}
-                  </div>
-                  <div className="time">{experienceData.duration || "_"}</div>
-                </div>
-                <div className="job-wrapper">
-                  <div className="title">{experienceData.title || "_"}</div>
-                  <div>{experienceData.description || "_"}</div>
-                </div>
+                ))}
               </div>
             )}
-          </div>
 
           <div className="projects">
             <h2>Projects</h2>
@@ -203,6 +186,16 @@ const firstResume = forwardRef(
                 </div>
               </div>
             )}
+          </div>
+          <div className="interests">
+            <h2>Interests</h2>
+            <div>
+              {extraData?.hobbies
+                ?.filter((hobby) => hobby.trim() !== "")
+                .map((hobby, index) => (
+                  <h4 key={index}>{hobby}</h4>
+                ))}
+            </div>
           </div>
         </section>
       </div>

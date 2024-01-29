@@ -29,7 +29,7 @@ body {
   display: flex;
   align-items: center;
   position: relative;
-  padding-left: 2dvw;
+  padding-left: 10px;
   margin-bottom: 2dvh;
 }
 
@@ -41,14 +41,16 @@ body {
 }
 
 .name-wrapper {
-  font-size: 35px;
+  font-size: x-large;
+  width: 75%;
   font-family: "Varela Round", sans-serif;
   color: #343638;
   text-transform: uppercase;
   line-height: 1em;
   position: absolute;
   z-index: 1;
-  left: 30%;
+  left: 28%;
+  overflow-wrap: break-word;
 }
 
 .first .contact-info {
@@ -186,7 +188,8 @@ body {
   margin-bottom: 20px;
 }
 .second .experience,
-.second .projects {
+.second .projects,
+.second .interests {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -200,6 +203,9 @@ body {
   text-transform: uppercase;
   font-size: 1.2em;
   font-weight: 600;
+}
+.interests h2 {
+  font-size: large !important;
 }
 
 .second .job-wrapper {
@@ -229,6 +235,18 @@ body {
 .experience div,
 .projects div {
   font-weight: 400;
+}
+
+.interests div {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.interests div h4 {
+  flex: 0 0 45%;
+  overflow-wrap: break-word;
+  margin: 1px 3px;
+  padding: 3px;
 }
 
 .education-item {

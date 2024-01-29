@@ -122,7 +122,7 @@ export default function Extra(props) {
                   value={hobby}
                   placeholder=""
                   onChange={handleInput}
-                  required
+                  required={index < 2}
                 />
                 <span className="placeholder">Interest</span>
               </div>
