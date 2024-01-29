@@ -64,7 +64,6 @@ export default function Resume() {
     navigate(-1);
   };
 
-  console.log(certificatesData);
   return (
     <>
       <Link to="/" className="backHome btn">
