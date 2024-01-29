@@ -43,7 +43,7 @@ export default function Resume() {
     if (element) {
       const options = {
         margin: 0,
-        filename: "resume.pdf",
+        filename: `${personalData.fullName}-Resume.pdf`,
         image: { type: "jpeg", quality: 0.98 },
         html2canvas: { scale: 2, logging: true, scrollY: 0 },
         jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
@@ -61,14 +61,7 @@ export default function Resume() {
       <Link to="/" className="backHome btn">
         Home
       </Link>
-      <div
-        style={{
-          overflowY: "auto",
-          width: "803px",
-          height: "400px",
-          margin: "20px auto",
-        }}
-      >
+      <div className="resumeDiv">
         <ResumeContent
           ref={resumeContentRef}
           personalData={personalData}

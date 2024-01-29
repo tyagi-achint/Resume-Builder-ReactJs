@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Pagefeed from "../Pagefeed/Pagefeed";
 import "./style.css";
 import Clearall from "../Clearall/Clearall";
+import ImageAbove, { ImageBelow } from "../Image/Images";
 
 export default function PersonalInfo(props) {
   const pageName = props.currentPage;
@@ -60,7 +61,10 @@ export default function PersonalInfo(props) {
         <Link to="/" className="backHome btn">
           Home
         </Link>
-        <h1 className="currentPage">{pageName} Information </h1>
+        <div className="aboveForm">
+          <h1 className="currentPage">{pageName} Information</h1>
+          <ImageAbove />
+        </div>
 
         <div className="formDiv">
           <form onSubmit={handleSave}>
@@ -155,9 +159,12 @@ export default function PersonalInfo(props) {
               Next <i className="fa-solid fa-right-long" />
             </button>
           </form>
-          <button className="btn clearBtn" onClick={clearForm}>
-            Clear Page
-          </button>
+          <div className="belowForm">
+            <button className="btn clearBtn" onClick={clearForm}>
+              Clear Page
+            </button>
+            <ImageBelow />
+          </div>
         </div>
       </div>
     </>

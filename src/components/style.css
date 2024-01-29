@@ -66,14 +66,34 @@ body {
   color: white !important;
 }
 
-/* Page Heading */
+/* Form Heading */
+.aboveForm {
+  display: flex;
+  margin-bottom: -10px;
+  position: relative;
+  padding-top: 40px;
+}
 
 h1.currentPage {
   font-family: math;
   letter-spacing: -2px;
-  margin-bottom: -10px;
-  margin-left: 12px;
+  margin: 0 auto 0 12px;
   font-variant-caps: small-caps;
+}
+.imageFirst {
+  max-height: 130px;
+  position: absolute;
+  right: 0;
+  bottom: -15px;
+}
+
+.belowForm {
+  justify-content: space-between;
+  display: flex;
+}
+.imageSecond {
+  max-height: 90px;
+  position: relative !important;
 }
 
 /* Form Div */
@@ -142,6 +162,8 @@ h1.currentPage {
 .formDiv .clearBtn {
   position: relative !important;
   margin-left: 10px;
+  height: fit-content;
+  margin-top: auto;
 }
 
 .formDiv .btn.addForm {
@@ -160,14 +182,30 @@ h1.currentPage {
     width: 80%;
   }
 
-  form {
+  .formDiv form {
     display: block;
     text-align: center;
   }
-  form div {
-    padding: 0 5%;
+  .formDiv form div {
+    padding: 2% 0 0;
+    border-bottom: 2px solid #ccc;
   }
   .formNavbar {
+    display: none !important;
+  }
+  .imageFirst {
+    display: none !important;
+  }
+  .formDiv form div:last-of-type {
+    width: fit-content !important;
+    display: block !important;
+    margin: 10px auto !important;
+    border: none;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .imageSecond {
     display: none !important;
   }
 }

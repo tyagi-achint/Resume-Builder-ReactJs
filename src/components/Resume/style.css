@@ -14,3 +14,15 @@
   padding: 5px 10px;
   margin: 10px;
 }
+.resumeDiv {
+  overflow-y: auto;
+  width: 803px;
+  height: 400px;
+  margin: 20px auto;
+}
+
+@media screen and (max-width: 900px) {
+  .resumeDiv {
+    margin-top: 10% !important;
+  }
+}

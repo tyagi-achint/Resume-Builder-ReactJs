@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Pagefeed from "../Pagefeed/Pagefeed";
 import "./style.css";
 import Clearall from "../Clearall/Clearall";
+import ImageAbove, { ImageBelow } from "../Image/Images";
 
 export default function EducationInfo(props) {
   const pageName = props.currentPage;
@@ -84,7 +85,10 @@ export default function EducationInfo(props) {
       <Clearall />
       <Pagefeed currentPage={pageName} />
       <div id="educationInfo">
-        <h1 className="currentPage">{pageName} Information </h1>
+        <div className="aboveForm">
+          <h1 className="currentPage">{pageName} Information</h1>
+          <ImageAbove />
+        </div>
 
         <div className="formDiv">
           <form onSubmit={handleSubmit}>
@@ -179,9 +183,12 @@ export default function EducationInfo(props) {
               Next <i className="fa-solid fa-right-long" />
             </button>
           </form>
-          <button className="btn clearBtn" onClick={clearForm}>
-            Clear Page
-          </button>
+          <div className="belowForm">
+            <button className="btn clearBtn" onClick={clearForm}>
+              Clear Page
+            </button>
+            <ImageBelow />
+          </div>
         </div>
       </div>
     </>
