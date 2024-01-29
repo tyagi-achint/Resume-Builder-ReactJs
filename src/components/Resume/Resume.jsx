@@ -9,6 +9,7 @@ export default function Resume() {
   const [educationData, setEducationData] = useState({});
   const [experienceData, setExperienceData] = useState({});
   const [projectData, setProjectData] = useState({});
+  const [certificatesData, setCertificatesData] = useState({});
   const [skillsData, setSkillsData] = useState({});
   const [extraData, setExtraData] = useState({});
   const navigate = useNavigate();
@@ -28,8 +29,14 @@ export default function Resume() {
       const storedProjectData = localStorage.getItem("projectInfoData");
       setProjectData(JSON.parse(storedProjectData) || {});
 
+      const storedCertificatesData = localStorage.getItem(
+        "certificateInfoData"
+      );
+      setCertificatesData(JSON.parse(storedCertificatesData) || {});
+
       const storedSkillsData = localStorage.getItem("skillsInfoData");
       setSkillsData(JSON.parse(storedSkillsData) || {});
+
       const storedExtraData = localStorage.getItem("extraInfoData");
       setExtraData(JSON.parse(storedExtraData) || {});
     };
@@ -57,7 +64,7 @@ export default function Resume() {
     navigate(-1);
   };
 
-  console.log(experienceData);
+  console.log(certificatesData);
   return (
     <>
       <Link to="/" className="backHome btn">
@@ -71,6 +78,7 @@ export default function Resume() {
           skillsData={skillsData}
           experienceData={experienceData}
           projectData={projectData}
+          certificatesData={certificatesData}
           extraData={extraData}
         />
       </div>

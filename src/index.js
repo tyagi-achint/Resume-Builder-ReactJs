@@ -10,6 +10,7 @@ import Projects from './components/Projects/Projects';
 import Skills from './components/Skills/Skills';
 import Resume from './components/Resume/Resume';
 import Extra from './components/Extra/Extra';
+import Certificates from './components/Certificates/Certificates';
 
 
 const router = new createBrowserRouter([
@@ -38,6 +39,11 @@ const router = new createBrowserRouter([
         path: 'projects',
         element: <Projects currentPage="Projects" />
       },
+      {
+        path: 'certificates',
+        element: <Certificates currentPage="Certificates" />
+      }
+      ,
       {
         path: 'skills',
         element: <Skills currentPage="Skills" />

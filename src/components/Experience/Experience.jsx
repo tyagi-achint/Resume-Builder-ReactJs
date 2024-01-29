@@ -28,7 +28,8 @@ export default function ExperienceInfo(props) {
     setExperiences(updatedExperiences);
   };
 
-  const handleAddExperience = () => {
+  const handleAddExperience = (event) => {
+    event.preventDefault();
     setExperiences([
       ...experiences,
       {

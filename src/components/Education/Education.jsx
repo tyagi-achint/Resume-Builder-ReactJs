@@ -30,7 +30,8 @@ export default function EducationInfo(props) {
     setEducations(updatedEducations);
   };
 
-  const handleAddEducation = () => {
+  const handleAddEducation = (event) => {
+    event.preventDefault();
     setEducations([
       ...educations,
       {

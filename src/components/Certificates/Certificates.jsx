@@ -5,70 +5,66 @@ import "./style.css";
 import Clearall from "../Clearall/Clearall";
 import ImageAbove, { ImageBelow } from "../Image/Images";
 
-export default function ProjectInfo(props) {
+export default function CertificateInfo(props) {
   const pageName = props.currentPage;
   const navigate = useNavigate();
 
-  const [projects, setProjects] = useState([
+  const [certificates, setCertificates] = useState([
     {
-      title: "",
-      skills: "",
-      description: "",
-      link: "",
+      certificateName: "",
+      certificateBy: "",
+      completedDate: "",
     },
   ]);
 
   const handleInputChange = (event, index) => {
     const { name, value } = event.target;
-    const updatedProjects = [...projects];
-    updatedProjects[index] = {
-      ...updatedProjects[index],
+    const updatedCertificates = [...certificates];
+    updatedCertificates[index] = {
+      ...updatedCertificates[index],
       [name]: value,
     };
-    setProjects(updatedProjects);
+    setCertificates(updatedCertificates);
   };
 
-  const handleAddProject = (event) => {
+  const handleAddCertificate = (event) => {
     event.preventDefault();
-    setProjects([
-      ...projects,
+    setCertificates([
+      ...certificates,
       {
-        title: "",
-        skills: "",
-        description: "",
-        link: "",
+        certificateName: "",
+        certificateBy: "",
+        completedDate: "",
       },
     ]);
   };
 
   useEffect(() => {
-    const savedData = localStorage.getItem("projectInfoData");
+    const savedData = localStorage.getItem("certificateInfoData");
     if (savedData) {
-      setProjects(JSON.parse(savedData));
+      setCertificates(JSON.parse(savedData));
     }
   }, []);
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    localStorage.setItem("projectInfoData", JSON.stringify(projects));
-    navigate("/certificates");
+    localStorage.setItem("certificateInfoData", JSON.stringify(certificates));
+    navigate("/skills");
   };
 
   const handleBack = (event) => {
     event.preventDefault();
-    localStorage.setItem("projectInfoData", JSON.stringify(projects));
-
+    localStorage.setItem("certificateInfoData", JSON.stringify(certificates));
     navigate(-1);
   };
 
   const clearForm = () => {
-    localStorage.removeItem("projectInfoData");
-    setProjects([
+    localStorage.removeItem("certificateInfoData");
+    setCertificates([
       {
-        title: "",
-        skills: "",
-        description: "",
-        link: "",
+        certificateName: "",
+        certificateBy: "",
+        completedDate: "",
       },
     ]);
   };
@@ -80,7 +76,7 @@ export default function ProjectInfo(props) {
       </Link>
       <Clearall />
       <Pagefeed currentPage={pageName} />
-      <div id="projectsInfo">
+      <div id="certificatesInfo">
         <div className="aboveForm">
           <h1 className="currentPage">{pageName} Information</h1>
           <ImageAbove />
@@ -88,59 +84,46 @@ export default function ProjectInfo(props) {
 
         <div className="formDiv">
           <form onSubmit={handleSubmit}>
-            {projects.map((project, index) => (
+            {certificates.map((certificate, index) => (
               <div key={index}>
                 <label>
-                  <i className="fa-solid fa-file-alt"></i>
+                  <i class="fa-solid fa-file-circle-check"></i>
                 </label>
                 <input
                   type="text"
-                  name="title"
-                  placeholder="Title"
-                  value={project.title}
+                  name="certificateName"
+                  placeholder="Certificate Name"
+                  value={certificate.certificateName}
                   onChange={(e) => handleInputChange(e, index)}
-                  required
                 />
 
                 <label>
-                  <i className="fa-solid fa-tools"></i>
+                  <i class="fa-solid fa-file-export"></i>
                 </label>
                 <input
                   type="text"
-                  name="skills"
-                  placeholder="Skills"
-                  value={project.skills}
+                  name="certificateBy"
+                  placeholder="Certificate From"
+                  value={certificate.certificateBy}
                   onChange={(e) => handleInputChange(e, index)}
-                  required
                 />
 
                 <label>
-                  <i className="fa-solid fa-align-left"></i>
-                </label>
-                <input
-                  name="description"
-                  placeholder="Short description"
-                  value={project.description}
-                  onChange={(e) => handleInputChange(e, index)}
-                  required
-                ></input>
-
-                <label>
-                  <i className="fa-solid fa-link"></i>
+                  <i class="fa-solid fa-calendar"></i>
                 </label>
                 <input
                   type="text"
-                  name="link"
-                  placeholder="Link (optional)"
-                  value={project.link}
+                  name="completedDate"
+                  placeholder="Completed Date"
+                  value={certificate.completedDate}
                   onChange={(e) => handleInputChange(e, index)}
                 />
               </div>
             ))}
 
             <div style={{ justifySelf: "center" }}>
-              <button className="btn addForm" onClick={handleAddProject}>
-                Add Project
+              <button className="btn addForm" onClick={handleAddCertificate}>
+                Add Certificate
               </button>
             </div>
 

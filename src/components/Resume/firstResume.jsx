@@ -9,6 +9,7 @@ const firstResume = forwardRef(
       skillsData,
       experienceData,
       projectData,
+      certificatesData,
       extraData,
     },
     ref
@@ -187,6 +188,30 @@ const firstResume = forwardRef(
               </div>
             )}
           </div>
+
+          {Array.isArray(certificatesData) &&
+            certificatesData.length > 0 &&
+            certificatesData.some((item) =>
+              Object.values(item).some((value) => value.trim() !== "")
+            ) && (
+              <div className="certificates">
+                <h2>Certificates</h2>
+                {certificatesData.map((certificate, index) => (
+                  <div key={index} className="certificate-item">
+                    <div className="title">
+                      {certificate.certificateName || "_"}
+                    </div>
+                    <div className="title">
+                      {certificate.certificateBy || "_"}
+                    </div>
+                    <div className="title">
+                      <div>{certificate.completedDate || "_"}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+
           <div className="interests">
             <h2>Interests</h2>
             <div>

@@ -8,6 +8,7 @@ export default function Pagefeed(props) {
     "Education",
     "Experience",
     "Projects",
+    "Certificates",
     "Skills",
     "Extra",
   ];
@@ -21,15 +22,11 @@ export default function Pagefeed(props) {
   const lineEffect = (value) => {
     const calculateValues = (value) => {
       if (value === "Personal") {
-        return 25;
+        return 20;
       } else if (value === "Education") {
-        return 15;
-      } else if (value === "Experience") {
         return 10;
-      } else if (value === "Projects") {
+      } else if (value === "Experience") {
         return 5;
-      } else if (value === "Skills") {
-        return -5;
       } else {
         return 0;
       }
@@ -38,6 +35,8 @@ export default function Pagefeed(props) {
       if (value === "Personal") {
         return -5;
       } else if (value === "Projects") {
+        return 5;
+      } else if (value === "Certificates") {
         return 5;
       } else if (value === "Skills") {
         return 10;

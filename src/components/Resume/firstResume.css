@@ -189,14 +189,16 @@ body {
 }
 .second .experience,
 .second .projects,
-.second .interests {
+.second .interests,
+.certificates {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
 .experience .title,
-.projects .title {
+.projects .title,
+.certificates .title {
   color: white;
   margin-bottom: 5px;
   text-align: left;
@@ -206,6 +208,11 @@ body {
 }
 .interests h2 {
   font-size: large !important;
+}
+.certificates .title {
+  font-size: medium !important;
+  flex: 1;
+  overflow-wrap: break-word;
 }
 
 .second .job-wrapper {
@@ -282,4 +289,12 @@ body {
   content: "";
   display: table;
   clear: both;
+}
+
+.certificate-item {
+  display: flex;
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 5px;
+  padding: 2px 5px;
 }

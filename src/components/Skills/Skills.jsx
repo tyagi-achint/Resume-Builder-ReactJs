@@ -17,7 +17,8 @@ export default function SkillsInfo(props) {
     setSkills(updatedSkills);
   };
 
-  const handleAddSkill = () => {
+  const handleAddSkill = (event) => {
+    event.preventDefault();
     setSkills([...skills, ""]);
   };
 
