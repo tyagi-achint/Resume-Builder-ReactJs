@@ -13,6 +13,7 @@ export default function Home() {
           <br />
           Effortless and Fast
         </h1>
+        <h6>~One page Resume</h6>
 
         <Link to="/personal" className="createResume btn">
           Create
