@@ -4,6 +4,8 @@ import Pagefeed from "../Pagefeed/Pagefeed";
 import "./style.css";
 import Clearall from "../Clearall/Clearall";
 import ImageAbove, { ImageBelow } from "../Image/Images";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
 
 export default function PersonalInfo(props) {
   const pageName = props.currentPage;
@@ -32,6 +34,9 @@ export default function PersonalInfo(props) {
     const inputName = event.target.name;
     const inputValue = event.target.value;
     setInput({ ...input, [inputName]: inputValue });
+  };
+  const handlePhoneInput = (value) => {
+    setInput({ ...input, phoneNumber: value });
   };
 
   const handleSave = (event) => {
@@ -94,13 +99,17 @@ export default function PersonalInfo(props) {
               <label htmlFor="phoneNumber">
                 <i className="fa-solid fa-mobile-screen" />
               </label>
-              <input
-                type="tel"
-                name="phoneNumber"
+              <PhoneInput
+                country={"in"}
                 value={input.phoneNumber}
-                onChange={handleInput}
-                placeholder="Phone(+country code)"
+                onChange={handlePhoneInput}
+                placeholder="Phone"
+                name="phoneNumber"
+                inputProps={{
+                  required: true,
+                }}
               />
+
               <label htmlFor="currentPlace">
                 <i className="fa-solid fa-location-dot" />
               </label>
@@ -112,7 +121,7 @@ export default function PersonalInfo(props) {
                 placeholder="City, State"
               />
             </div>
-            <div>
+            <div className="personalSocial">
               <label htmlFor="personalLink">
                 <i className="fa-solid fa-link" />
               </label>
@@ -154,7 +163,7 @@ export default function PersonalInfo(props) {
                 placeholder="Twitter 🔗"
               />
             </div>
-            <div></div>
+
             <button className="btn btnNext" type="submit">
               Next <i className="fa-solid fa-right-long" />
             </button>

@@ -35,7 +35,7 @@ const firstResume = forwardRef(
             </ul>
             <ul className="list-content">
               <li>{personalData.currentPlace}</li>
-              <li>{personalData.phoneNumber}</li>
+              <li>+{personalData.phoneNumber}</li>
               <li>{personalData.email}</li>
             </ul>
           </div>

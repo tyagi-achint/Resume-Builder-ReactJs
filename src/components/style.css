@@ -186,7 +186,7 @@ h1.currentPage {
     display: block;
     text-align: center;
   }
-  .formDiv form div {
+  .formDiv form div:not(.react-tel-input) {
     padding: 2% 0 0;
     border-bottom: 2px solid #ccc;
   }
@@ -196,7 +196,8 @@ h1.currentPage {
   .imageFirst {
     display: none !important;
   }
-  .formDiv form div:last-of-type {
+
+  .formDiv form > div:last-of-type:not(.react-tel-input) {
     width: fit-content !important;
     display: block !important;
     margin: 10px auto !important;

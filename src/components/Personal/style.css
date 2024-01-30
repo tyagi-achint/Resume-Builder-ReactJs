@@ -7,4 +7,65 @@
   #personalInfo {
     margin: 6dvh auto;
   }
+
+  .formDiv form div:last-of-type.personalSocial {
+    display: grid !important;
+    grid-template-columns: 12% 85% !important;
+    margin: 0 !important;
+    width: auto !important;
+  }
+  .react-tel-input .form-control {
+    width: 43.5dvw !important;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .react-tel-input {
+    width: 85% !important;
+  }
+  .react-tel-input .form-control {
+    width: 20.4dvw !important;
+  }
+}
+
+.react-tel-input {
+  margin-top: 0 !important;
+  background-color: transparent !important;
+  color: #2d2d2d !important;
+  padding: 0 !important;
+  font-weight: bolder !important;
+  margin-bottom: 16px !important;
+  font-family: Verdana, Geneva, Tahoma, sans-serif !important;
+  position: relative;
+}
+
+.react-tel-input .form-control {
+  height: 32px !important;
+  width: 36dvw;
+  background-color: transparent !important;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.react-tel-input .flag-dropdown,
+.react-tel-input .flag-dropdownv .selected-flag,
+.react-tel-input .selected-flag:hover,
+.react-tel-input .selected-flag:focus {
+  background-color: transparent !important;
+}
+
+.react-tel-input .flag-dropdown {
+  border-radius: 5px 0 0 5px !important;
+  padding-left: 5px !important;
+}
+
+.react-tel-input div {
+  border-bottom: none !important;
+}
+.react-tel-input .selected-flag {
+  width: 35px !important;
+}
+
+.react-tel-input .country-list .flag {
+  display: none !important;
 }
