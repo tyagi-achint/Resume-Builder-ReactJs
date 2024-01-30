@@ -107,7 +107,7 @@ export default function Extra(props) {
                   value={skill}
                   placeholder=""
                   onChange={handleInput}
-                  required
+                  required={index < 2}
                 />
                 <span className="placeholder">Personal Skill</span>
               </div>

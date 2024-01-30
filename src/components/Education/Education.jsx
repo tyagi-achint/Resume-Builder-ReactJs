@@ -77,6 +77,11 @@ export default function EducationInfo(props) {
       },
     ]);
   };
+  const handleDeleteEducation = (index) => {
+    const updatedEducations = [...educations];
+    updatedEducations.splice(index, 1);
+    setEducations(updatedEducations);
+  };
 
   return (
     <>
@@ -167,6 +172,14 @@ export default function EducationInfo(props) {
                   value={education.achievement}
                   onChange={(e) => handleInputChange(e, index)}
                 />
+                {educations.length > 1 && (
+                  <button
+                    className="btn deleteForm"
+                    onClick={() => handleDeleteEducation(index)}
+                  >
+                    Delete
+                  </button>
+                )}
               </div>
             ))}
 

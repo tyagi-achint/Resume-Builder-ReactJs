@@ -21,6 +21,11 @@ export default function SkillsInfo(props) {
     event.preventDefault();
     setSkills([...skills, ""]);
   };
+  const handleDeleteSkills = (index) => {
+    const updatedSkills = [...skills];
+    updatedSkills.splice(index, 1);
+    setSkills(updatedSkills);
+  };
 
   useEffect(() => {
     const savedData = localStorage.getItem("skillsInfoData");
@@ -75,6 +80,14 @@ export default function SkillsInfo(props) {
                   onChange={(e) => handleInputChange(e, index)}
                   required
                 />
+                {skills.length > 1 && (
+                  <button
+                    className="btn deleteForm"
+                    onClick={() => handleDeleteSkills(index)}
+                  >
+                    Delete
+                  </button>
+                )}
               </div>
             ))}
 

@@ -41,6 +41,12 @@ export default function ProjectInfo(props) {
     ]);
   };
 
+  const handleDeleteProjects = (index) => {
+    const updatedProjects = [...projects];
+    updatedProjects.splice(index, 1);
+    setProjects(updatedProjects);
+  };
+
   useEffect(() => {
     const savedData = localStorage.getItem("projectInfoData");
     if (savedData) {
@@ -135,6 +141,14 @@ export default function ProjectInfo(props) {
                   value={project.link}
                   onChange={(e) => handleInputChange(e, index)}
                 />
+                {projects.length > 1 && (
+                  <button
+                    className="btn deleteForm"
+                    onClick={() => handleDeleteProjects(index)}
+                  >
+                    Delete
+                  </button>
+                )}
               </div>
             ))}
 

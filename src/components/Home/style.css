@@ -23,8 +23,8 @@
 
 .homeImage {
   position: absolute;
-  height: 80vh;
-  width: 80vw;
+  height: 70dvh;
+  width: 55dvw;
   top: 0;
   left: 50%;
   transform: translateX(-50%);

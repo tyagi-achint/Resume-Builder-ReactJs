@@ -54,7 +54,7 @@ const firstResume = forwardRef(
                       {edu.startYear} - {edu.endYear || "_"}
                     </span>
                   </div>
-                  <span>{edu.achievement || "_"}</span>
+                  <span>{edu.achievement || ""}</span>
                 </div>
               ))
             ) : (
@@ -86,9 +86,11 @@ const firstResume = forwardRef(
           <div className="subFirstDiv">
             <h2>Personal Skills</h2>
             <ul>
-              {extraData?.personalSkills?.map((skill, index) => (
-                <li key={index}>{skill || "_"}</li>
-              ))}
+              {extraData?.personalSkills
+                ?.filter((skill) => skill.trim() !== "")
+                .map((skill, index) => (
+                  <li key={index}>{skill || "_"}</li>
+                ))}
             </ul>
           </div>
         </section>
@@ -161,12 +163,12 @@ const firstResume = forwardRef(
                 <div key={index} style={{ width: "100%" }}>
                   <div className="company">
                     <div className="title">{project.title || "_"}</div>
-                    <div>{project.skills || "_"}</div>
+                    <div>
+                      <a href={project.link || "#"}>{project.link || ""}</a>
+                    </div>
                   </div>
                   <div className="job-wrapper">
-                    <div className="title">
-                      <a href={project.link || "#"}>{project.link || "_"}</a>
-                    </div>
+                    <div className="title">{project.skills || "_"}</div>
                     <div>{project.description || "_"}</div>
                   </div>
                 </div>

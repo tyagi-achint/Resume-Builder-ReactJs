@@ -38,6 +38,11 @@ export default function CertificateInfo(props) {
       },
     ]);
   };
+  const handleDeleteCertificates = (index) => {
+    const updatedCertificates = [...certificates];
+    updatedCertificates.splice(index, 1);
+    setCertificates(updatedCertificates);
+  };
 
   useEffect(() => {
     const savedData = localStorage.getItem("certificateInfoData");
@@ -118,6 +123,14 @@ export default function CertificateInfo(props) {
                   value={certificate.completedDate}
                   onChange={(e) => handleInputChange(e, index)}
                 />
+                {certificates.length > 1 && (
+                  <button
+                    className="btn deleteForm"
+                    onClick={() => handleDeleteCertificates(index)}
+                  >
+                    Delete
+                  </button>
+                )}
               </div>
             ))}
 

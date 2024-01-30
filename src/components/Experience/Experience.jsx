@@ -41,6 +41,12 @@ export default function ExperienceInfo(props) {
     ]);
   };
 
+  const handleDeleteExperience = (index) => {
+    const updatedExperience = [...experiences];
+    updatedExperience.splice(index, 1);
+    setExperiences(updatedExperience);
+  };
+
   useEffect(() => {
     const savedData = localStorage.getItem("experienceInfoData");
     if (savedData) {
@@ -133,6 +139,14 @@ export default function ExperienceInfo(props) {
                   value={experience.skills}
                   onChange={(e) => handleInputChange(e, index)}
                 />
+                {experiences.length > 1 && (
+                  <button
+                    className="btn deleteForm"
+                    onClick={() => handleDeleteExperience(index)}
+                  >
+                    Delete
+                  </button>
+                )}
               </div>
             ))}
 
